@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">SupplierId</th>
+        <th scope="col">Name</th>
+        <th scope="col">Actions</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of elements">
+     <!-- <td>
+        <input type="number" [ngModel]="list.supplierId"[disabled]="!list.isEditable"/>
+        <input type="text" [ngModel]="list.name"[disabled]="!list.isEditable"/>  
+
+      </td> -->
+      
+    <td>{{list.supplierId}}</td>
+        <td>{{list.name}}</td>
+        <td><button routerLink='../edit/{{list.supplierId}}' class="btn btn-primary mb-2">Edit</button> </td>
+        <!-- <td><button (click)="elements.isEditable=!list.isEditable" *ngIf="!elements.isEditable">edit</button> -->
+          <!-- <button *ngIf="elements.isEditable" (click)="elements.isEditable=!list.isEditable">Save</button> -->
+        <td><button class="btn btn-primary mb-2"(click)="delete(list.supplierId)" >delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
