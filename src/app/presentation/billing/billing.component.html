@@ -1,0 +1,68 @@
+<!-- <h2 >Supplier Billing</h2> -->
+<!-- <div> -->
+<form [formGroup]="billingform">
+    <div formGroupName="billingAddress">
+    <div class="col-md-12">
+        <div class="form-group mt-4">
+           <label>AddressLine1</label>
+        </div>
+        <div class="form-row" style="margin: top 10px;">
+           <div class="col">
+              <input type="text" formControlName="add1" class="form-control" placeholder="AddressLine1">  
+              <!-- <input type="text" formControlName="firstname" class="form-control" placeholder="Enter FirstName">                -->
+                        <span *ngIf="add1 && add1.invalid && add1.touched">*This field is required</span>             
+           </div>
+        </div><br>
+     </div>
+     <div class="col-md-12">
+        <div class="form-group mt-4">
+           <label>AddressLine2</label>
+        </div>
+        <div class="form-row" style="margin: top 10px;">
+           <div class="col">
+              <input type="text" formControlName="add2" class="form-control" placeholder="AddressLine2">               
+              <span *ngIf="add2 && add2.invalid && add2.touched">*This field is required</span>             
+           
+            </div>
+        </div><br>
+     </div>
+     <div class="col-md-12">
+        <div class="form-group mt-4">
+           <label>City</label>
+        </div>
+        <div class="form-row" style="margin: top 10px;">
+           <div class="col">
+              <input type="text" formControlName="city" class="form-control" placeholder="City">               
+              <span *ngIf="city && city.invalid && city.touched">*This field is required</span>             
+           
+            </div>
+        </div><br>
+     </div>
+     <div class="col-md-12">
+        <div class="form-group mt-4">
+           <label>State</label>
+        </div>
+        <div class="form-row" style="margin: top 10px;">
+           <div class="col">
+              <input type="text" formControlName="state" class="form-control" placeholder="State">   
+              <span *ngIf="state && state.invalid && state.touched">*This field is required</span>             
+
+           </div>
+        </div><br>
+     </div>
+     <div class="col-md-12">
+        <div class="form-group mt-4">
+           <label>Country</label>
+        </div>
+        <div class="form-row" style="margin: top 10px;">
+           <div class="col">
+              <input type="text" formControlName="country" class="form-control" placeholder="Country"> 
+              <span *ngIf="country && country.invalid && country.touched">*This field is required</span>             
+              <!-- <button class="btn btn-primary mb-2" style="margin-left: 14px;">  Save </button>  -->
+           </div>
+        </div><br>
+     </div>    
+                 
+</div>
+</form>
+<!-- </div> -->

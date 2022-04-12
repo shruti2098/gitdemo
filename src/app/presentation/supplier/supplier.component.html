@@ -1,0 +1,81 @@
+<h1 align="center">Supplier Details</h1>
+<div>
+   <form [formGroup]="supplier" (ngSubmit)="onSubmit()" >
+    <div class="mt-5  "><br>
+      <div class="form-row ">
+         <div class="col-md-12 box">
+            <div class="form-group mt-4">
+               <label>Product_Id</label>
+               <div class="form-row" style="margin: top 10px;">
+                  <div class="col">
+                     <input type="text" formControlName="Id" class="form-control" placeholder="Enter Id">
+                        <span *ngIf="f['Id']?.errors?.['required'] && f['Id']?.touched ">*This field is invalid</span>
+                        <span *ngIf="f['Id']?.errors?.['minlength'] && f['Id']?.touched">*Enter At least 3 Char</span>
+                  </div>
+
+               </div>
+            </div>
+            <div class="form-group mt-4">
+               <label>First Name</label>
+            </div>
+            <div class="form-row" style="margin: top 10px;">
+               <div class="col">
+                  <input type="text" formControlName="firstname" class="form-control" placeholder="Enter FirstName">               
+                     <span *ngIf="f['firstname']?.errors?.['required'] && f['firstname']?.touched ">*This field is invalid</span>
+                     <span *ngIf="f['Id']?.errors?.['minlength'] && f['Id']?.touched">*Enter At least 3 Char</span>
+               </div>
+            </div>
+            <div class="col-md-12">
+               <div class="form-group mt-4">
+                  <label>Last Name</label>
+               </div>
+               <div class="form-row" style="margin: top 10px;">
+                  <div class="col">
+                     <input type="text" formControlName="lastname" class="form-control" placeholder="Enter LastName">               
+                     <span *ngIf="f['lastname']?.errors?.['required'] && f['lastname']?.touched ">*This field is invalid</span>
+                     
+                     <!-- <span *ngIf="lastname && lastname.invalid && lastname.touched">*This field is required</span> -->
+                  
+                  </div>
+               </div><br>
+            </div>
+            <div class="col-md-12">
+               <div class="form-group mt-4">
+                  <label>Price</label>
+               </div>
+               <div class="form-row" style="margin: top 10px;">
+                  <div class="col">
+                     <input type="text" formControlName="price" class="form-control" placeholder="Enter Price">               
+                     <span *ngIf="f['price']?.errors?.['required'] && f['price']?.touched ">*This field is invalid</span>                       
+                     <!-- <span *ngIf="price && price.invalid && price.touched">*This field is required</span> -->
+                  
+                  </div>
+               </div><br>
+            </div>
+            <div class="col-md-12">
+               <div class="form-group mt-4">
+                  <label>Product Name</label>
+               </div>
+               <div class="form-row" style="margin: top 10px;">
+               <div class="col">
+                  <input type="text" formControlName="productdt" class="form-control" placeholder="Enter ProductName">               
+                        <span *ngIf="f['productdt']?.errors?.['required'] && f['productdt']?.touched ">*This field is invalid</span>
+                          
+                        <!-- <span *ngIf="productdt && productdt.invalid && productdt.touched">*This field is required</span> -->
+                  
+               </div>
+               </div>
+            </div>
+            <app-billing [billingform]="supplier"></app-billing>
+            <div class="form-row mt-4">
+               <div class="col-md-6">
+                  <button type="submit " class="btn btn-primary mb-2" >Add</button>&nbsp;
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+   </form>
+</div>   
+{{supplier.value|json}}
+   

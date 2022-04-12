@@ -1,0 +1,12 @@
+<p>edit works!</p>
+<form [formGroup]="supplier" (ngSubmit)="Edit()">
+<table>
+    <tr><td>SupplierId</td>
+    <td><input type="text" formControlName="supplierId"></td>
+    </tr><br><br>
+    <tr><td>Name</td>
+    <td><input type="text" formControlName="name"></td></tr>
+</table>
+
+<button class="btn btn-primary mb-2">Update</button>
+</form>
