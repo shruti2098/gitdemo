@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './presentation/login/login.component';
 import { EditComponent } from './presentation/edit/edit.component';
+import { DataTablesModule } from 'angular-datatables';
+import { SearchbyNameComponent } from './presentation/searchby-name/searchby-name.component';
+//import { SearchByNamePipe } from './search-by-name.pipe';
 //import { ModulesComponent } from './presentation/modules/modules.component';
 
 @NgModule({
@@ -25,6 +28,9 @@ import { EditComponent } from './presentation/edit/edit.component';
     SupplierDetailsComponent,
     LoginComponent,
     EditComponent,
+    SearchbyNameComponent,
+    //SearchByNamePipe,
+    
     
     
        
@@ -34,7 +40,8 @@ import { EditComponent } from './presentation/edit/edit.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule,
 
       
   ],
