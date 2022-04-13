@@ -12,19 +12,31 @@ import { PostService } from '../../services/post.service';
   styleUrls: ['./supplier-details.component.scss']
 })
 export class SupplierDetailsComponent implements OnInit {
+  dtOptions: DataTables.Settings = {};
+  //$scope:any
   //list!:any[];
    elements: any = [];
    Data:any=[];
  
 
   constructor(private http:HttpClient,private service:AuthService) { }
-
+  // dtoptions:DataTables.Settings={};
   ngOnInit(): void {
     this.service.getData().subscribe(s=>{
       console.log(s);
       this.elements=s;
       console.log(this.elements)
     });
+
+    // this.dtoptions={
+    //   
+    // }
+    this.dtOptions = {
+      pagingType:'full_numbers',
+      pageLength:5,
+      lengthMenu:[5, 15, 25],
+      processing:true
+    };
     
   }
   delete(supplierId:number){
@@ -36,4 +48,15 @@ export class SupplierDetailsComponent implements OnInit {
       })
     //console.log(this.Data.value);
   }
+  
+//   $scope.searchTable = function ()
+// {
+//     console.log($scope.tableInstance);
+//     var query = $scope.searchText;
+//     console.log(query);
+//     var result = $scope.tableInstance.DataTable.search(query, false, false, false);
+//     console.log(result);
+//     $scope.tableInstance.DataTable.search(query, false, false, true).draw();
+//};
+
 }
